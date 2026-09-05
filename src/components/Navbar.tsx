@@ -35,7 +35,7 @@ function Navbar() {
       <div className="navbar__container">
         <Link to="/" className="navbar__logo">
           <span className="navbar__logo-bracket">{'<'}</span>
-          <span className="navbar__logo-name">SA</span>
+          <span className="navbar__logo-name">S11</span>
           <span className="navbar__logo-bracket">{'/>'}</span>
         </Link>
 

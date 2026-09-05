@@ -1,150 +1,103 @@
 .intro {
   position: fixed;
   inset: 0;
-  z-index: 1000;
+  z-index: 200;
   display: flex;
   align-items: center;
   justify-content: center;
-  background: #0a0a0f;
+  background: radial-gradient(ellipse at 50% 40%, #16121f 0%, #0b0a10 60%, #060609 100%);
+  overflow: hidden;
 }
 
 .intro__bg {
   position: absolute;
   inset: 0;
   background:
-    radial-gradient(ellipse at 30% 20%, rgba(108, 92, 231, 0.08) 0%, transparent 50%),
-    radial-gradient(ellipse at 70% 80%, rgba(0, 206, 201, 0.05) 0%, transparent 50%),
-    radial-gradient(ellipse at center, rgba(10, 10, 15, 0.9) 0%, #0a0a0f 100%);
+    radial-gradient(600px 400px at 20% 30%, rgba(108, 92, 231, 0.14), transparent 70%),
+    radial-gradient(500px 350px at 80% 70%, rgba(108, 92, 231, 0.08), transparent 70%);
+  animation: introDrift 16s ease-in-out infinite alternate;
+}
+
+@keyframes introDrift {
+  from { transform: translate3d(-2%, -1%, 0) scale(1); }
+  to { transform: translate3d(2%, 2%, 0) scale(1.06); }
 }
 
 .intro__content {
   position: relative;
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
   text-align: center;
   padding: 0 24px;
+  max-width: 720px;
 }
 
-.intro__badge {
-  display: inline-flex;
-  align-items: center;
-  gap: 8px;
-  padding: 6px 16px;
-  background: rgba(108, 92, 231, 0.1);
-  border: 1px solid rgba(108, 92, 231, 0.25);
-  border-radius: 100px;
-  font-size: 0.8rem;
-  font-weight: 500;
-  color: var(--color-accent-light);
-  margin-bottom: 32px;
-  letter-spacing: 0.05em;
+.intro__brand {
+  font-size: clamp(2rem, 5vw, 3rem);
+  font-weight: 700;
+  letter-spacing: 0.14em;
   text-transform: uppercase;
+  background: linear-gradient(120deg, #f4f2ff, #a99df0);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
 }
 
-.intro__badge-dot {
-  width: 6px;
-  height: 6px;
-  border-radius: 50%;
-  background: var(--color-success);
-  animation: pulse 2s ease-in-out infinite;
+.intro__rule {
+  width: 72px;
+  height: 2px;
+  margin: 26px auto;
+  background: linear-gradient(90deg, transparent, #6c5ce7, transparent);
+  transform-origin: center;
 }
 
 .intro__title {
-  font-size: clamp(2.5rem, 7vw, 5rem);
-  font-weight: 900;
-  letter-spacing: -0.03em;
-  line-height: 1.05;
-  margin-bottom: 12px;
-  background: linear-gradient(135deg, #f0f0f5 0%, #a29bfe 100%);
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-clip: text;
-}
-
-.intro__subtitle {
-  font-family: var(--font-mono);
-  font-size: clamp(0.9rem, 2vw, 1.2rem);
-  font-weight: 600;
-  color: var(--color-accent-secondary);
-  letter-spacing: 0.15em;
-  margin-bottom: 8px;
+  font-size: clamp(2.4rem, 7vw, 4.5rem);
+  font-weight: 800;
+  color: #f5f4fa;
+  letter-spacing: -0.02em;
+  margin: 0 0 14px;
 }
 
 .intro__tagline {
-  font-size: 1.1rem;
-  color: var(--color-text-muted);
-  margin-bottom: 40px;
+  font-size: clamp(1rem, 2.2vw, 1.2rem);
+  color: #9a94b8;
+  margin: 0 0 40px;
 }
 
-.intro__controls {
-  margin-bottom: 32px;
-}
-
-.intro__controls-info {
+.intro__actions {
   display: flex;
+  flex-direction: column;
   align-items: center;
-  gap: 10px;
-  font-family: var(--font-mono);
-  font-size: 0.75rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
-  letter-spacing: 0.05em;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-.intro__controls-sep {
-  color: var(--color-border);
+  gap: 18px;
 }
 
 .intro__enter-btn {
-  padding: 16px 40px;
-  font-size: 1rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  color: white;
-  background: linear-gradient(135deg, #6c5ce7 0%, #5a4bd6 100%);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 16px 38px;
   border: none;
-  border-radius: 12px;
+  border-radius: 999px;
+  font-size: 1.05rem;
+  font-weight: 600;
+  color: #fff;
   cursor: pointer;
-  box-shadow: 0 4px 24px rgba(108, 92, 231, 0.3);
-  transition: all 0.2s ease;
-  margin-bottom: 20px;
-}
-
-.intro__enter-btn:hover {
-  box-shadow: 0 6px 32px rgba(108, 92, 231, 0.45);
+  background: linear-gradient(120deg, #6c5ce7, #5348c7);
+  box-shadow: 0 12px 34px rgba(108, 92, 231, 0.35);
 }
 
 .intro__skip-btn {
-  font-size: 0.85rem;
-  font-weight: 500;
-  color: var(--color-text-muted);
   background: none;
   border: none;
+  color: #6f6a8a;
+  font-size: 0.9rem;
   cursor: pointer;
-  transition: color 0.2s ease;
-  padding: 8px 16px;
+  transition: color 0.25s ease;
 }
 
 .intro__skip-btn:hover {
-  color: var(--color-text-secondary);
+  color: #b5b0d6;
 }
 
-@media (max-width: 768px) {
-  .intro__title {
-    font-size: clamp(2rem, 8vw, 3rem);
-  }
-
-  .intro__controls-info {
-    font-size: 0.7rem;
-    gap: 6px;
-  }
-
-  .intro__enter-btn {
-    padding: 14px 32px;
-    font-size: 0.9rem;
-  }
+@media (prefers-reduced-motion: reduce) {
+  .intro__bg { animation: none; }
 }
