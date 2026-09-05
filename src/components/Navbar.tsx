@@ -34,9 +34,7 @@ function Navbar() {
     <nav className={`navbar ${scrolled ? 'navbar--scrolled' : ''}`}>
       <div className="navbar__container">
         <Link to="/" className="navbar__logo">
-          <span className="navbar__logo-bracket">{'<'}</span>
           <span className="navbar__logo-name">S11</span>
-          <span className="navbar__logo-bracket">{'/>'}</span>
         </Link>
 
         <div className={`navbar__links ${isOpen ? 'navbar__links--open' : ''}`}>
