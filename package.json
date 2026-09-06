@@ -5,12 +5,13 @@
   "type": "module",
   "scripts": {
     "dev": "vite",
-"build": "node node_modules/typescript/bin/tsc --noEmit && node node_modules/vite/bin/vite.js build",
+    "build": "node node_modules/typescript/bin/tsc --noEmit && node node_modules/vite/bin/vite.js build",
     "preview": "vite preview"
   },
   "dependencies": {
     "@react-three/drei": "^9.114.0",
     "@react-three/fiber": "^8.17.10",
+    "@vercel/analytics": "^2.0.1",
     "framer-motion": "^11.11.0",
     "lucide-react": "^0.451.0",
     "react": "^18.3.1",

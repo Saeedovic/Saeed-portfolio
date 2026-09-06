@@ -1,5 +1,6 @@
 import { useEffect } from 'react'
 import { Routes, Route, useLocation } from 'react-router-dom'
+import { Analytics } from '@vercel/analytics/react'
 import Layout from './components/Layout'
 import Home from './pages/Home'
 import About from './pages/About'
@@ -24,6 +25,7 @@ function ScrollToTop() {
 function App() {
   return (
     <Layout>
+      <Analytics />
       <ScrollToTop />
       <Routes>
         <Route path="/" element={<Home />} />
