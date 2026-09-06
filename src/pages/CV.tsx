@@ -6,7 +6,7 @@ function CV() {
   return (
     <section className="section cv">
       <div className="container">
-        <h2 className="section-title">Curriculum Vitae</h2>
+        <h2 className="section-title">Resume</h2>
         <p className="section-subtitle">
           A comprehensive overview of my professional background, education, and achievements.
         </p>
